@@ -1,0 +1,17 @@
+{
+  "name": "ClickupTests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "cypress": "^14.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
