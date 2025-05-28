@@ -22,7 +22,7 @@ describe('Goals API Tests', () => {
         })
 
         it('Should return 200 and created goals ids GET all goals with valid team_id', () => {
-            goals.getAllGoalsSuccess().then((response) => {
+            goals.getAllGoals(Cypress.env('teamId')).then((response) => {
                 expect(response.status).to.eql(200)
                 const returnedGoalIds = response.body.goals.map((resIds) => resIds.id);
                 expect(returnedGoalIds, `Goal 1 id should be in response body`).to.include(goal1_id)
@@ -36,7 +36,7 @@ describe('Goals API Tests', () => {
             })
         })
         it('Should return 400 GET all goals with invalid team_id', () => {
-            goals.getAllGoalsWithInvalidTeamId(generateRandomString(10)).then((response) => {
+            goals.getAllGoals(generateRandomString(10)).then((response) => {
                 expect(response.status).to.eql(400)
             })
         })

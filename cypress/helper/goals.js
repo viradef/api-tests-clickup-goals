@@ -1,18 +1,14 @@
-const pathToAllGoals = `team/${Cypress.env('teamId')}/goal`
 const baseUrl = Cypress.env('url')
 const auth = Cypress.env('clickupToken')
+const teamId = Cypress.env('teamId')
 
 
-export const getAllGoalsSuccess = (() => {
-    return cy.sendRequest(`${baseUrl}/${pathToAllGoals}`, 'GET', null, auth)
+export const getAllGoals = ((team_id) => {
+    return cy.sendRequest(`${baseUrl}/team/${team_id}/goal`, 'GET', null, auth)
 })
 
 export const getAllGoalsWithoutAuth = (() => {
-    return cy.sendRequest(`${baseUrl}/${pathToAllGoals}`, 'GET', null, null)
-})
-
-export const getAllGoalsWithInvalidTeamId = ((invalidTeamId) => {
-    return cy.sendRequest(`${baseUrl}/team/${invalidTeamId}/goal`, 'GET', null, auth)
+    return cy.sendRequest(`${baseUrl}/team/${teamId}/goal`, 'GET', null, null)
 })
 
 export const createGoal = ((payload, teamId) => {
@@ -20,7 +16,7 @@ export const createGoal = ((payload, teamId) => {
 })
 
 export const createGoalWithoutAuth = ((payload) => {
-    return cy.sendRequest(`${baseUrl}/team/${Cypress.env('teamId')}/goal`, 'POST', payload, null)
+    return cy.sendRequest(`${baseUrl}/team/${teamId}/goal`, 'POST', payload, null)
 })
 
 export const deleteGoalSuccess = ((goal_id) => {
