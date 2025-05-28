@@ -1,6 +1,5 @@
 import * as goals from "../../helper/goals";
 import {generateGoalPayload, generateRandomUUID} from "../../helper/randomDataGenerators";
-import {deleteGoalWithoutAuth} from "../../helper/goals";
 
 describe(`Goals API Tests`, () => {
     describe(`DELETE Goal Tests`, () => {

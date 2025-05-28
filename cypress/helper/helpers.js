@@ -10,5 +10,5 @@ export const buildUpdatePayload = (vars, overrides = {}) => ({
     multiple_owners: vars.goal_multiple_owners,
     due_date: vars.goal_due_date,
     color: vars.goal_color,
-    ...overrides, // this merges and overrides only the fields you want to update
+    ...overrides,
 });
