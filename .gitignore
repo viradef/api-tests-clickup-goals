@@ -5,4 +5,4 @@ cypress/screenshots
 allure-report/
 allure-results/
 mochawesome-report/
-.idea
+.idea/
